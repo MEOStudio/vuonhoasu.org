@@ -1,0 +1,169 @@
+.container{
+    margin: 3em 0;
+    padding: 0 12vw 0 12vw;
+    .block{
+        width: 100%;
+        height: auto;
+    }
+    font-family: Lora;
+
+    .heading{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        #Header1{
+            font-size: 5vw;
+            margin-bottom: 0.5em;
+            font-weight: 600;
+        }
+        #Header2{
+            font-size: 8vw;
+            font-weight: 700;
+            color: #FBC846;
+            margin-bottom: 1em;
+        }
+    }
+
+    #Header3, #Header4{
+        font-size: 3.75vw;
+        font-weight: 600;
+    }
+
+    .content{
+        font-size: 3.8vw;
+    }
+
+    .containContainer{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .reverseContainer{
+        width: 100%;
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    .reverseRowContainer{
+        width: 100%;
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    .reverseColumnContainer{
+        width: 100%;
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .circle{
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-size: 5vw;
+        font-weight: 600;
+    }
+
+    .containContainer{
+        display: flex;
+        flex-direction: row;
+    }
+
+    #Arts{
+        margin-top: 4rem;
+        background-color: #E3C770;
+        height: 40vw;
+        width: 40vw;
+    }
+
+    #Content{
+        background-color: #F9D185;
+        height: 45vw;
+        width: 45vw;
+    }
+    
+    #Development{
+        background-color: #F3E0B5;
+        height: 50vw;
+        width: 50vw;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .container{
+        padding: 0;
+        display: flex;
+        .block{
+            width: 50%;
+            height: auto;
+            padding: 0 4vw 0 4vw;
+        }
+
+        .heading{
+            #Header1{
+                font-size:  3vw;
+            }
+            #Header2{
+                font-size: 6vw;
+            }
+        }
+
+        .containContainer{
+            display: flex;
+            flex-direction: row;
+        }
+
+        .body{
+            
+            padding: 0 5vw 0 5vw;
+            #Header3{
+                font-size: 1.5vw;
+            }
+            .content{
+                text-align: justify;
+                font-size: 1.4vw;
+            }
+        }
+
+        #Header4{
+            visibility: hidden;
+        }
+
+        .circle{
+            font-size: 2vw;
+        }
+
+        #Arts{
+            height: 15vw;
+            width: 15vw;
+            margin-top: 0;
+        }
+    
+        #Content{
+            background-color: #F9D185;
+            height: 20vw;
+            width: 20vw;
+        }
+        
+        #Development{
+            background-color: #F3E0B5;
+            height: 25vw;
+            width: 25vw;
+        }
+
+        .line{
+            width: 2px;
+            background-color: #D4D4D4;
+            height: 65vw
+        }
+
+        .reverseColumnContainer{
+            width: 100%;
+            display: flex;
+            flex-direction: column-reverse;
+        }
+    }
+}
