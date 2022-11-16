@@ -60,6 +60,8 @@ This markdown file is created for VuonHoaSu organization which includes the data
 - private array of quizzes and characters
 - private String text
 - private int usersCount
+- private int number of correct quizzes
+- pravate array of achievement
 
 #### Method:
 
@@ -69,14 +71,17 @@ This markdown file is created for VuonHoaSu organization which includes the data
 - getter method for the array of quizzes
 - getter method for each quiz
 - getter method for text
-- gettter method for number of users read
+- getter method for number of correct quizzes
+- getter method for number of users read
+- getter method for achievement with corresponding quiz
 - mutator method for adding and removing characters
 - mutator method for changing the background
 - mutator method for adding and removing quizzes
 - mutator method for changing text
 - mutator method for number of users read
+- mutator method for number of correct quizzes
 
-#### Collaborators
+### Collaborators
 
 - Quizzes
   - store an array of quizzes
@@ -86,3 +91,51 @@ This markdown file is created for VuonHoaSu organization which includes the data
   - add/remove quizzes out of array
 - Users
   - count number of users read
+
+## Class: Quiz
+
+### Responsibility
+
+#### Data field
+
+- private array of questions
+- private 2D array of answers for each question
+- private array of correct answer
+
+#### Method
+
+- getter method for correct answer with corresponding question
+- getter method for array of answers
+- getter method for questions
+
+### Collaborator
+
+- Users
+  - Check the answer of the user
+- Stories
+  - increment the number of correct quizzes in that story
+
+## Class: Characters
+
+### Responsibilities
+
+#### Data field
+
+- private String name
+- private String role
+- private String stories
+- image
+
+#### Method
+
+- getter method for name
+- getter method for role
+- getter method for stories
+- getter method for image
+
+### Collaborators
+
+- Characters
+  - interactor with other character
+- Users
+  - Show image to users
