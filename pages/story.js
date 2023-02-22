@@ -1,5 +1,7 @@
 import styles from "../styles/story.module.scss";
-import Image from "next/image";
+import Image from "next/Image";
+
+
 
 export default function Story() {
   return (
