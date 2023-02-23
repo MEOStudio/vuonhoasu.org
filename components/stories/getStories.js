@@ -3,18 +3,18 @@ import path from 'path';
 import matter from 'gray-matter';
 
 export const getStoriesRaw = (folder) => {
-    let file = [];
+    let files = [];
     let tempFolder = [folder];
 
     // get all files in folder and subfolders
     // in case there're side stories and stuff
     const getFiles = (teFolder) => {
         const tFolder = teFolder.join('\\');
-        fs.readFileSync(tFolder).forEach((file) => {
+        fs.readdirSync(tFolder).forEach((file) => {
             const tAbs = [...teFolder, file];
             const abs = tAbs.join('\\');
             if (fs.statSync(abs).isDirectory()) return getFiles(tAbs);
-            else return file.push(tAbs);
+            else return files.push(tAbs);
         })
     }
 
@@ -25,12 +25,11 @@ export const getStoriesRaw = (folder) => {
         filePath.shift();
         return filePath;
       })
-      return finalFiles;
+    return finalFiles;
 }
 
 // Get the metadata of the stories (title, date, etc.) from the files for preview.
 export const getStoriesMetadata = (folder) => {
-    const folder = "posts/";
   const files = getPostsRaw(folder);
 
   // Get gray-matter data from each file.
@@ -49,4 +48,17 @@ export const getStoriesMetadata = (folder) => {
   });
 
   return posts;
+}
+
+// Get the slug of the stories from the files for preview.
+export const getStoriesSlugs = (folder) => {
+  const files = getStoriesRaw(folder);
+
+  // Remove .md from the end of the file name.
+  const slugs = files.map((fileName) => {
+    if (fileName[fileName.length - 1] == "index.md") fileName.pop();
+    else fileName[fileName.length - 1] = fileName[fileName.length - 1].replace(".md", "");
+    return fileName;
+  });
+  return slugs;
 }
