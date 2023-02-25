@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Image from "next/Image";
+import Image from "next/image";
 import styles from "../styles/Home.module.scss";
 import profilePic from "../public/pictures/meo.jpg";
 import profilePic2 from "../public/pictures/background.jpg"
@@ -23,7 +23,7 @@ export default function Home() {
       <main className={styles.main}>
         <div className={styles.gridContainer1}>
           <div className={styles.profilePic}>
-            <Image className={styles.profilePicStyling} src={profilePic} width={600} height={600}  />
+            <Image className={styles.profilePicStyling} src={profilePic} alt='Profile picture' width={600} height={600}  />
           </div>
           <div className={styles.secondItem}>
             <div style={{fontSize: "40px", fontWeight : "600"}}>Lạc chân vào</div>
@@ -35,7 +35,7 @@ export default function Home() {
             <div className={styles.headingIcon}><FontAwesomeIcon icon={faFire} /></div>
             <div className={styles.componentTitle}>Đầu truyện mới nhất</div>
             <div className={styles.contentBox}>
-              <Image src={profilePic2} />
+              <Image src={profilePic2} alt='Profile picture 2'/>
               <div>Chiến binh hoa sứ 2017</div>
               <div style={{color: COLORS.base}} className={styles.sub}>Lễ Đón Học sinh Mới</div>
             </div>
@@ -45,7 +45,7 @@ export default function Home() {
             <div className={styles.headingIcon}><FontAwesomeIcon icon={faStar} /></div>
             <div className={styles.componentTitle}>Vũ trụ hiện tại</div>
             <div className={styles.contentBox} >
-              <Image src={profilePic2} />
+              <Image src={profilePic2} alt='Profile picture 2'/>
               <div>Lorem ipsum dolor sit amet</div>
               <div style={{color: COLORS.base}} className={styles.sub}>Lorem ipsum dolor sit amet</div>
             </div>
