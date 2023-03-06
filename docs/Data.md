@@ -15,31 +15,47 @@ This markdown file is created for VuonHoaSu organization which includes the data
 
 ### Responsibilities:
 
-#### Data field:
+- Contains the USER's basic information
+  - Name
+  - Age
+  - Class in PTNK
+- Gets the USER's statistics
+  - Number of finished questions
+  - Number of finished stories
+- Stores USER's ongoing stories and finished stories
+
+### Data field:
 
 - private String username
+- private int age
+- private int class
 - private String email
-- private String achievements
+- private array of achievements
 - private array of stories
 - private array of finished stories
 - private int achivementCount
 - private int storiesCount
 
-#### Method:
+### Method:
 
 - getter method for username
 - getter method for email
+- getter method for age
+- getter method for class
 - getter method for achievements
 - getter method for a story with particular id
 - getter method for the number of achievement
 - getter method for the number of finished stories
 - getter method for a finished story with particular id
 - mutator method for username
+- mutator method for age
+- mutator method for class
 - mutator method for email
 - mutator method for achievements
 - mutator method for adding and removing stories
 - mutator method for the number of achievement
 - mutator method for adding and removing finished stories
+
 ### Collaborators
 
 - Stories
@@ -50,11 +66,23 @@ This markdown file is created for VuonHoaSu organization which includes the data
   
 - Quizzes
   - increment the number of achievement of the user
+
 ## Class: Stories
 
 ### Responsibilities:
 
-#### Data field:
+- Contains the statistics for each story:
+  - Number of users have read
+  - Static achievements
+  - Static characters
+  - Number of quizzes
+  - Number of pages
+- Contains specific information for each story:
+  - Back ground image
+  - Characters
+  - Text (Story Detail)
+
+### Data field:
 
 - background image
 - private array of quizzes and characters
@@ -63,7 +91,7 @@ This markdown file is created for VuonHoaSu organization which includes the data
 - private int number of correct quizzes
 - pravate array of achievement
 
-#### Method:
+### Method:
 
 - getter method for the array of characters
 - getter method for each character
@@ -84,34 +112,43 @@ This markdown file is created for VuonHoaSu organization which includes the data
 ### Collaborators
 
 - Quizzes
-  - store an array of quizzes
-  - add/remove quizzes out of array
+  - stores an array of quizzes
+  - adds/removes quizzes out of array
 - Characters
-  - store an array of quizzes
-  - add/remove quizzes out of array
+  - stores an array of characters
+  - adds/removes characters out of array
 - Users
   - count number of users read
+  - give users achivements after reading
 
 ## Class: Quiz
 
 ### Responsibility
+
+- Contains information about the quiz's questions:
+  - number of users correctly answer each question
+  - correct answer
 
 #### Data field
 
 - private array of questions
 - private 2D array of answers for each question
 - private array of correct answer
+- private array of number of users answering each question correctly
 
 #### Method
 
 - getter method for correct answer with corresponding question
 - getter method for array of answers
 - getter method for questions
+- getter method for statistics for each questions
 
 ### Collaborator
 
 - Users
   - Check the answer of the user
+  - display statistics of each equation to users
+
 - Stories
   - increment the number of correct quizzes in that story
 
@@ -119,14 +156,20 @@ This markdown file is created for VuonHoaSu organization which includes the data
 
 ### Responsibilities
 
-#### Data field
+- Contains information for each character:
+  - image
+  - name
+  - role
+  - stories about each character
+
+### Data field
 
 - private String name
 - private String role
 - private String stories
 - image
 
-#### Method
+### Method
 
 - getter method for name
 - getter method for role
@@ -136,6 +179,7 @@ This markdown file is created for VuonHoaSu organization which includes the data
 ### Collaborators
 
 - Characters
-  - interactor with other character
+  - interact with other character
 - Users
-  - Show image to users
+  - show image to users
+  - show stories of each character to users
